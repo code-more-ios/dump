@@ -1,3 +1,13 @@
+RequestConfig requestConfig = RequestConfig.custom()
+        .setConnectionRequestTimeout(
+                Timeout.ofMilliseconds(REQUEST_TIMEOUT))
+        .setConnectTimeout(
+                Timeout.ofMilliseconds(httpPostConnectTimeout))
+        .setResponseTimeout(
+                Timeout.ofMilliseconds(httpPostReadTimeout))
+        .build();
+
+
 @Bean
 public PoolingHttpClientConnectionManager poolingConnectionManager()
         throws NoSuchAlgorithmException, KeyStoreException {
