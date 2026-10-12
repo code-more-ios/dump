@@ -1,3 +1,9 @@
+return HttpClients.custom()
+        .setDefaultRequestConfig(requestConfig)
+        .setConnectionManager(poolingConnectionManager())
+        .setKeepAliveStrategy(connectionKeepAliveStrategy())
+        .build();
+
 RequestConfig requestConfig = RequestConfig.custom()
         .setConnectionRequestTimeout(
                 Timeout.ofMilliseconds(REQUEST_TIMEOUT))
